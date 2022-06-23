@@ -17,7 +17,7 @@ const safeNameRe = /^[a-z][a-z0-9]+$/i
  * @param {string} name
  * @returns {string}
  */
-export function safeReference (name) {
+function safeReference (name) {
   return safeNameRe.test(name) ? `.${name}` : `['${name}']`
 }
 
@@ -108,7 +108,7 @@ function tc (s) {
  * @param {string} root
  * @returns {ValidatorFunction}
  */
-export function create (schema, root) {
+function create (schema, root) {
   if (!root || typeof root !== 'string') {
     throw new TypeError('A root is required')
   }
@@ -123,7 +123,7 @@ export function create (schema, root) {
   return /** @type {ValidatorFunction} */ (new Function('obj', fn))
 }
 
-export class Builder {
+class Builder {
   /**
    * @param {Schema} schema
    */
@@ -442,4 +442,10 @@ export class Builder {
 
     throw new Error(`Can't deal with type kind: "${typeDef.kind}"`)
   }
+}
+
+module.exports = {
+	safeReference,
+	create,
+	Builder,
 }

@@ -3,7 +3,6 @@
   "version": "0.0.2",
   "description": "IPLD Schema Validator",
   "main": "ipld-schema-validator.js",
-  "type": "module",
   "types": "./types/ipld-schema-validator.d.ts",
   "scripts": {
     "build": "npm run build:js && npm run build:types",
