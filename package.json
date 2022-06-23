@@ -18,7 +18,7 @@
     "coverage": "c8 --reporter=html mocha test/test-*.js && npm_config_yes=true npx st -d coverage -p 8080"
   },
   "exports": {
-    "import": "./ipld-schema-validator.js"
+    ".": "./ipld-schema-validator.js"
   },
   "bin": {
     "ipld-schema-validator": "bin/cli.mjs"
